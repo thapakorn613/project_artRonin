@@ -1,0 +1,97 @@
+import de.fhpotsdam.unfolding.*;
+import de.fhpotsdam.unfolding.geo.*;
+import de.fhpotsdam.unfolding.utils.*;
+import de.fhpotsdam.unfolding.providers.*;
+import de.fhpotsdam.unfolding.data.*;
+import de.fhpotsdam.unfolding.marker.*;
+
+import java.util.List;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+
+Location bostonLocation = new Location(51.00755f, -113.9989f);
+Location locationBerlin = new Location(51.00755f, -113.9989f);
+
+DateTimeFormatter date_format = DateTimeFormatter.ofPattern("dd-MM-yy");
+
+UnfoldingMap map;
+
+Table truck_rawdata;
+
+Location[] locations = new Location[] {
+    new Location(51.00755f, -113.9979f),
+    new Location(51.00765f, -113.9989f),
+    new Location(51.00800f, -114.0009f)
+};
+
+int c = 0; // Variable for line index
+int currentLocation = 0;
+
+void setup(){
+    size(800, 600, P2D);
+    //size(800, 600, OPENGL);
+    smooth();
+    noStroke();
+
+    //? data init
+    truck_rawdata = loadTable("data/truck1week_for_test.csv", "header");
+    println(truck_rawdata.getRowCount() + " total rows in table");
+    for (TableRow row : truck_rawdata.rows()) 
+    {
+        //? get origin lat-long
+        float lat_orig = row.getFloat("Latitude_orig");
+        float long_orig = row.getFloat("Longitude_orig");
+
+        //? get destination lat-long
+        float lat_dest = row.getFloat("Latitude_dest");
+        float long_dest = row.getFloat("Longitude_dest");
+
+        //? get transportation duration
+        LocalDateTime ldt_orig = LocalDateTime.of(LocalDate.parse(row.getString("date_orig"), date_format), LocalTime.parse(row.getString("time_orig")));
+        LocalDateTime ldt_dest = LocalDateTime.of(LocalDate.parse(row.getString("date_dest"), date_format), LocalTime.parse(row.getString("time_dest")));
+        
+        //? find duration between origin & destination
+        Long trans_duration_minutes = Duration.between(ldt_orig, ldt_dest).toMinutes();
+        
+        
+    }
+
+    // init Map
+    map = new UnfoldingMap(this);
+    //map = new UnfoldingMap(this, new StamenMapProvider.TonerBackground());
+    map.zoomToLevel(12);
+    map.panTo(bostonLocation);
+    map.setZoomRange(10, 14); // prevent zooming too far out
+    map.setPanningRestriction(bostonLocation, 50);
+    MapUtils.createDefaultEventDispatcher(this, map);
+    frameRate(5); // frameRate(5) -> frameCount % 10 เปลี่ยนทีละ 2 วินาที
+}
+
+void draw(){
+    background(0);
+    map.draw();
+
+    if (frameCount % 10 == 0) {
+        map.panTo(locations[currentLocation]);
+        // Next Locations 
+        currentLocation++;
+        if (currentLocation >= locations.length) {
+            currentLocation = 0;
+        }
+    }
+    //println("frameCount: "+frameCount);
+    ScreenPosition posNow = map.getScreenPosition(locations[currentLocation]);
+    fill(255, 200, 0, 100);
+    ellipse(posNow.x,posNow.y, 20, 20);
+
+    // Fixed-size marker
+    // ScreenPosition posBerlin = map.getScreenPosition(locationBerlin);
+    // fill(0, 200, 0, 100);
+    // ellipse(posBerlin.x, posBerlin.y, 20, 20);
+}
+
+void keyPressed() {
+  if (key == ' ') {
+    map.switchTweening();
+  }
+}
