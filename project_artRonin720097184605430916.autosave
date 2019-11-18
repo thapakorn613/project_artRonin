@@ -1,4 +1,4 @@
-import de.fhpotsdam.unfolding.*;
+5import de.fhpotsdam.unfolding.*;
 import de.fhpotsdam.unfolding.geo.*;
 import de.fhpotsdam.unfolding.utils.*;
 import de.fhpotsdam.unfolding.providers.*;
@@ -82,7 +82,7 @@ void setup(){
     // init Map
     map = new UnfoldingMap(this);
     //map = new UnfoldingMap(this, new StamenMapProvider.TonerBackground());
-    map.zoomToLevel(5);
+    map.zoomToLevel(4);
     map.panTo(beginLocation);
     map.setZoomRange(4, 14); // prevent zooming too far out
     map.setPanningRestriction(beginLocation, 50);
