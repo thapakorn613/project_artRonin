@@ -12,6 +12,7 @@ class Truck{
     Location loc_dest;
     float sizeTruck = 5;
     Location tempLoc;
+    // Location temp3;
     ScreenPosition screenPos_origin;
     ScreenPosition screenPos_on_time;
     ScreenPosition screenPos_destinetion;
@@ -66,6 +67,7 @@ class Truck{
         time_minus = temp_time[1];
         time_second = temp_time[2];
 
+
         duration_lati = _lati_d - _lati_o;
         duration_long = _long_d - _long_o;
         duration_time = _duration;
@@ -78,9 +80,9 @@ class Truck{
     }
 
     
-    public void update() {        
+    public void update(int _timer) {        
         if(begin_start == true){
-            if( frameCount % timer == 0){
+            if( frameCount % _timer == 0){
                 lat_origin = lat_origin + speed_lati;
                 long_origin = long_origin + speed_long;
                 if( lat_origin >= lat_dest){
@@ -100,14 +102,23 @@ class Truck{
                 screenPos_on_time = map.getScreenPosition(temp1); 
 
                 Location temp2 = new Location(old_lat,old_long);
-                screenPos_destinetion = map.getScreenPosition(temp2); 
+                screenPos_origin = map.getScreenPosition(temp2); 
                 
+                Location temp3 = new Location(lat_dest,long_dest);
+                screenPos_destinetion = map.getScreenPosition(temp3); 
+
+
                 strokeWeight(5);
                 stroke(c_orign);
-                line(screenPos_on_time.x, screenPos_on_time.y, screenPos_destinetion.x, screenPos_destinetion.y);
+                line(screenPos_on_time.x, screenPos_on_time.y, screenPos_origin.x, screenPos_origin.y);
 
                 ellipseMode(CENTER);
                 fill(c_orign);
+                ellipse(screenPos_origin.x, screenPos_origin.y, 10, 10);
+
+                strokeWeight(2);
+                stroke(c_orign);
+                fill(0,0,0);
                 ellipse(screenPos_destinetion.x, screenPos_destinetion.y, 10, 10);
 
             }

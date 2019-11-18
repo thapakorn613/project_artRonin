@@ -179,7 +179,7 @@ void draw(){
     if(boolStart){
         // mainDisplay.timeDisplay(gbl_day,gbl_hour,gbl_minus);
         for(int i = indexBegin ;i< indexEnd_end ;i++){
-            trucks[i].update();
+            trucks[i].update(timer);
             trucks[i].display(gbl_day,gbl_hour,gbl_minus);
         }
         println("indexBegin : "+indexBegin+" indexEnd : "+indexEnd_end);
@@ -208,8 +208,8 @@ void resetToZero(){
     gbl_hour = 0;
     gbl_minus = 0;
     indexBegin = 0;
-    indexEnd = 0;
-    indexEnd_end = 0;
+    indexEnd = 900;
+    indexEnd_end = 900;
     savedDay = "14";
     frameCount = 0;
 }
