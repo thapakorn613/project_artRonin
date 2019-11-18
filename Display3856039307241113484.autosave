@@ -3,16 +3,16 @@ class Display{
     PFont impact_15,impact_20,georgia,wdb,tw,impact_10;
     float w;
     float h;
-    color c_menu_start = color(15, 180, 60,100);
-    color c_menu_reset = color(15, 180, 255,100);
+    color c_menu_1 = color(15, 180, 60,100);
     float size_menu_h = 50;
     int chane_x = -20;
     int minus_show;
-    public String savedDay = "14";
+    public String savedDay = "";
     public String selectDay= "";
 
     Display(float _width, float _height){
         w = _width;
+        
         h = _height;
         impact_10 = createFont("Impact", 10, true);
         impact_15 = createFont("Impact", 15, true);
@@ -25,19 +25,11 @@ class Display{
     
     void showDisplay(){
         displaySearch();
-        fill(c_menu_start);
+        fill(c_menu_1);
         textFont(impact_15);
-        rect(540, 500, 100, 50);
-        textFont(tw);
+        rect(w-150, h-100, size_menu_h * 2 , size_menu_h);
         fill(0);
-        text("Start!!", 555, 540);
-        fill(255,255,0);
-        text("Map : Thapakorn", 535, 490);
-        fill(c_menu_reset);
-        rect(650, 500, 100, 50);
-        textFont(tw);
-        fill(0);
-        text("Reset!!", 660, 540);
+        text("NORTH", w-150, h-100);
 
         textFont(impact_20);
         fill(0);
@@ -48,6 +40,14 @@ class Display{
         text("Date : ",25,430);
         fill(255,0,0);
         text(savedDay,80,430);
+        textFont(impact_10);
+        fill(255,255,255);
+        text(savedDay+"/03/16 , 01:15:00 am",30,455);
+        text(savedDay+"/03/16 , 05:15:00 am",30,480);
+        text(savedDay+"/03/16 , 05:15:00 am",30,505);
+        text(savedDay+"/03/16 , 05:15:00 am",30,530);
+        text(savedDay+"/03/16 , 05:18:00 am",30,555);
+
     }
 
     void displaySearch(){
@@ -69,7 +69,6 @@ class Display{
     public int getDay(){
         return int(savedDay);
     }
-
     void timeDisplay(int day,int hour,int minus){
         minus = minus % 60;
         fill(0);
@@ -82,10 +81,9 @@ class Display{
         text("Time[", 30, 80);
         if(str(hour).length()<2){
             text("0", 100, 80);
-            text(" "+str(hour), 110, 80);    
-        }else {
-            text(" "+str(hour), 95, 80);    
         }
+        text(" "+str(hour), 110, 80);
+
         text(":", 140, 80);
         if(str(minus).length()<2){
             text("0", 150, 80);
@@ -111,6 +109,14 @@ class Display{
 
     }
 
+    void interactDisplay(){
+        if (mouseX >= 20 && mouseX <= 190 && mouseY >= 440 && mouseY <= 460) {
+            println("test");
+        }
+        if (mouseX >= 20 && mouseX <= 190 && mouseY >= 440 && mouseY <= 460) {
+            println("test");
+        }
+    }
   
 
 }

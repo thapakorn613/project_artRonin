@@ -1,0 +1,736 @@
+
+// try {
+    
+
+//         if( temp_gbl_day == 14){
+//             if(indexBeginOfSearch14 == false){
+//                 listTime[0].addDay(count_row);
+//                 indexBeginOfSearch14 = true;
+//             }
+//             if(temp_gbl_hour == 0 && boolIndexBeginOfHour[0] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[0] = true;
+//             }
+//             if(temp_gbl_hour == 1 && boolIndexBeginOfHour[1] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[1] = true;
+//             }
+//             if(temp_gbl_hour == 2 && boolIndexBeginOfHour[2] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[2] = true;
+//             }
+//             if(temp_gbl_hour == 3 && boolIndexBeginOfHour[3] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[3] = true;
+//             }
+//             if(temp_gbl_hour == 4 && boolIndexBeginOfHour[4] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[4] = true;
+//             }
+//             if(temp_gbl_hour == 5 && boolIndexBeginOfHour[5] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[5] = true;
+//             }
+//             if(temp_gbl_hour == 6 && boolIndexBeginOfHour[6] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[6] = true;
+//             }
+//             if(temp_gbl_hour == 7 && boolIndexBeginOfHour[7] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[7] = true;
+//             }
+            
+//             if(temp_gbl_hour == 8 && boolIndexBeginOfHour[8] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[8] = true;
+//             }
+//             if(temp_gbl_hour == 9 && boolIndexBeginOfHour[9] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[9] = true;
+//             }
+//             if(temp_gbl_hour == 10 && boolIndexBeginOfHour[10] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[10] = true;
+//             }
+//             if(temp_gbl_hour == 11 && boolIndexBeginOfHour[11] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[11] = true;
+//             }
+//             if(temp_gbl_hour == 12 && boolIndexBeginOfHour[12] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[12] = true;
+//             }
+//             if(temp_gbl_hour == 13 && boolIndexBeginOfHour[13] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[13] = true;
+//             }
+//             if(temp_gbl_hour == 14 && boolIndexBeginOfHour[14] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[14] = true;
+//             }
+//             if(temp_gbl_hour == 15 && boolIndexBeginOfHour[15] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[15] =true;
+//             }
+            
+//             if(temp_gbl_hour == 16 && boolIndexBeginOfHour[16] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[16] = true;
+//             }
+//             if(temp_gbl_hour == 17 && boolIndexBeginOfHour[17] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[17] = true;
+//             }
+//             if(temp_gbl_hour == 18 && boolIndexBeginOfHour[18] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[18] = true;
+//             }
+//             if(temp_gbl_hour == 19 && boolIndexBeginOfHour[19] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[19] = true;
+//             }
+//             if(temp_gbl_hour == 20 && boolIndexBeginOfHour[20] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[20] = true;
+//             }
+//             if(temp_gbl_hour == 21 && boolIndexBeginOfHour[21] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[21] = true;
+//             }
+//             if(temp_gbl_hour == 22 && boolIndexBeginOfHour[22] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[22] = true;
+//             }
+//             if(temp_gbl_hour == 23 && boolIndexBeginOfHour[23] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[23] = true;
+//             }
+//         }
+//         if( temp_gbl_day == 15){
+//             if(indexBeginOfSearch15 == false){
+//                 listTime[1].addDay(count_row);
+//                 indexBeginOfSearch15 = true;
+//             }
+//             if(temp_gbl_hour == 0 && boolIndexBeginOfHour[0] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[0] = true;
+//             }
+//             if(temp_gbl_hour == 1 && boolIndexBeginOfHour[1] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[1] = true;
+//             }
+//             if(temp_gbl_hour == 2 && boolIndexBeginOfHour[2] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[2] = true;
+//             }
+//             if(temp_gbl_hour == 3 && boolIndexBeginOfHour[3] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[3] = true;
+//             }
+//             if(temp_gbl_hour == 4 && boolIndexBeginOfHour[4] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[4] = true;
+//             }
+//             if(temp_gbl_hour == 5 && boolIndexBeginOfHour[5] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[5] = true;
+//             }
+//             if(temp_gbl_hour == 6 && boolIndexBeginOfHour[6] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[6] = true;
+//             }
+//             if(temp_gbl_hour == 7 && boolIndexBeginOfHour[7] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[7] = true;
+//             }
+            
+//             if(temp_gbl_hour == 8 && boolIndexBeginOfHour[8] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[8] = true;
+//             }
+//             if(temp_gbl_hour == 9 && boolIndexBeginOfHour[9] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[9] = true;
+//             }
+//             if(temp_gbl_hour == 10 && boolIndexBeginOfHour[10] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[10] = true;
+//             }
+//             if(temp_gbl_hour == 11 && boolIndexBeginOfHour[11] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[11] = true;
+//             }
+//             if(temp_gbl_hour == 12 && boolIndexBeginOfHour[12] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[12] = true;
+//             }
+//             if(temp_gbl_hour == 13 && boolIndexBeginOfHour[13] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[13] = true;
+//             }
+//             if(temp_gbl_hour == 14 && boolIndexBeginOfHour[14] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[14] = true;
+//             }
+//             if(temp_gbl_hour == 15 && boolIndexBeginOfHour[15] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[15] = true;
+//             }
+            
+//             if(temp_gbl_hour == 16 && boolIndexBeginOfHour[16] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[16] = true;
+//             }
+//             if(temp_gbl_hour == 17 && boolIndexBeginOfHour[17] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[17] = true;
+//             }
+//             if(temp_gbl_hour == 18 && boolIndexBeginOfHour[18] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[18] = true;
+//             }
+//             if(temp_gbl_hour == 19 && boolIndexBeginOfHour[19] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[19] = true;
+//             }
+//             if(temp_gbl_hour == 20 && boolIndexBeginOfHour[20] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[20] = true;
+//             }
+//             if(temp_gbl_hour == 21 && boolIndexBeginOfHour[21] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[21] = true;
+//             }
+//             if(temp_gbl_hour == 22 && boolIndexBeginOfHour[22] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[22] = true;
+//             }
+//             if(temp_gbl_hour == 23 && boolIndexBeginOfHour[23] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[23] = true;
+//             }
+//         }
+//         if( temp_gbl_day == 16){
+//             if(indexBeginOfSearch16 == false){
+//                 listTime[2].addDay(count_row);
+//                 indexBeginOfSearch16 = true;
+//             }
+//             if(temp_gbl_hour == 0 && boolIndexBeginOfHour[0] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[0] = true;
+//             }
+//             if(temp_gbl_hour == 1 && boolIndexBeginOfHour[1] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[1] = true;
+//             }
+//             if(temp_gbl_hour == 2 && boolIndexBeginOfHour[2] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[2] = true;
+//             }
+//             if(temp_gbl_hour == 3 && boolIndexBeginOfHour[3] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[3] = true;
+//             }
+//             if(temp_gbl_hour == 4 && boolIndexBeginOfHour[4] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[4] = true;
+//             }
+//             if(temp_gbl_hour == 5 && boolIndexBeginOfHour[5] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[5] = true;
+//             }
+//             if(temp_gbl_hour == 6 && boolIndexBeginOfHour[6] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[6] = true;
+//             }
+//             if(temp_gbl_hour == 7 && boolIndexBeginOfHour[7] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[7] = true;
+//             }
+            
+//             if(temp_gbl_hour == 8 && boolIndexBeginOfHour[8] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[8] = true;
+//             }
+//             if(temp_gbl_hour == 9 && boolIndexBeginOfHour[9] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[9] = true;
+//             }
+//             if(temp_gbl_hour == 10 && boolIndexBeginOfHour[10] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[10] = true;
+//             }
+//             if(temp_gbl_hour == 11 && boolIndexBeginOfHour[11] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[11] = true;
+//             }
+//             if(temp_gbl_hour == 12 && boolIndexBeginOfHour[12] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[12] = true;
+//             }
+//             if(temp_gbl_hour == 13 && boolIndexBeginOfHour[13] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[13] = true;
+//             }
+//             if(temp_gbl_hour == 14 && boolIndexBeginOfHour[14] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[14] = true;
+//             }
+//             if(temp_gbl_hour == 15 && boolIndexBeginOfHour[15] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[15] = true;
+//             }
+            
+//             if(temp_gbl_hour == 16 && boolIndexBeginOfHour[16] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[16] = true;
+//             }
+//             if(temp_gbl_hour == 17 && boolIndexBeginOfHour[17] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[17] = true;
+//             }
+//             if(temp_gbl_hour == 18 && boolIndexBeginOfHour[18] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[18] = true;
+//             }
+//             if(temp_gbl_hour == 19 && boolIndexBeginOfHour[19] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[19] = true;
+//             }
+//             if(temp_gbl_hour == 20 && boolIndexBeginOfHour[20] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[20] = true;
+//             }
+//             if(temp_gbl_hour == 21 && boolIndexBeginOfHour[21] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[21] = true;
+//             }
+//             if(temp_gbl_hour == 22 && boolIndexBeginOfHour[22] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[22] = true;
+//             }
+//             if(temp_gbl_hour == 23 && boolIndexBeginOfHour[23] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[23] = true;
+//             }
+//         }
+//         if( temp_gbl_day == 17){
+//             if(indexBeginOfSearch17 == false){
+//                 listTime[3].addDay(count_row);
+//                 indexBeginOfSearch17 = true;
+//             }
+//             if(temp_gbl_hour == 0 && boolIndexBeginOfHour[0] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[0] = true;
+//             }
+//             if(temp_gbl_hour == 1 && boolIndexBeginOfHour[1] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[1] = true;
+//             }
+//             if(temp_gbl_hour == 2 && boolIndexBeginOfHour[2] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[2] = true;
+//             }
+//             if(temp_gbl_hour == 3 && boolIndexBeginOfHour[3] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[3] = true;
+//             }
+//             if(temp_gbl_hour == 4 && boolIndexBeginOfHour[4] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[4] = true;
+//             }
+//             if(temp_gbl_hour == 5 && boolIndexBeginOfHour[5] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[5] = true;
+//             }
+//             if(temp_gbl_hour == 6 && boolIndexBeginOfHour[6] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[6] = true;
+//             }
+//             if(temp_gbl_hour == 7 && boolIndexBeginOfHour[7] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[7] = true;
+//             }
+            
+//             if(temp_gbl_hour == 8 && boolIndexBeginOfHour[8] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[8] = true;
+//             }
+//             if(temp_gbl_hour == 9 && boolIndexBeginOfHour[9] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[9] = true;
+//             }
+//             if(temp_gbl_hour == 10 && boolIndexBeginOfHour[10] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[10] = true;
+//             }
+//             if(temp_gbl_hour == 11 && boolIndexBeginOfHour[11] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[11] = true;
+//             }
+//             if(temp_gbl_hour == 12 && boolIndexBeginOfHour[12] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[12] = true;
+//             }
+//             if(temp_gbl_hour == 13 && boolIndexBeginOfHour[13] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[13] = true;
+//             }
+//             if(temp_gbl_hour == 14 && boolIndexBeginOfHour[14] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[14] = true;
+//             }
+//             if(temp_gbl_hour == 15 && boolIndexBeginOfHour[15] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[15] =true;
+//             }
+            
+//             if(temp_gbl_hour == 16 && boolIndexBeginOfHour[16] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[16] = true;
+//             }
+//             if(temp_gbl_hour == 17 && boolIndexBeginOfHour[17] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[17] = true;
+//             }
+//             if(temp_gbl_hour == 18 && boolIndexBeginOfHour[18] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[18] = true;
+//             }
+//             if(temp_gbl_hour == 19 && boolIndexBeginOfHour[19] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[19] = true;
+//             }
+//             if(temp_gbl_hour == 20 && boolIndexBeginOfHour[20] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[20] = true;
+//             }
+//             if(temp_gbl_hour == 21 && boolIndexBeginOfHour[21] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[21] = true;
+//             }
+//             if(temp_gbl_hour == 22 && boolIndexBeginOfHour[22] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[22] = true;
+//             }
+//             if(temp_gbl_hour == 23 && boolIndexBeginOfHour[23] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[23] = true;
+//             }
+//         }
+//         if( temp_gbl_day == 18){
+//             if(indexBeginOfSearch18 == false){
+//                 listTime[4].addDay(count_row);
+//                 indexBeginOfSearch18 = true;
+//             }
+//             if(temp_gbl_hour == 0 && boolIndexBeginOfHour[0] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[0] = true;
+//             }
+//             if(temp_gbl_hour == 1 && boolIndexBeginOfHour[1] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[1] = true;
+//             }
+//             if(temp_gbl_hour == 2 && boolIndexBeginOfHour[2] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[2] = true;
+//             }
+//             if(temp_gbl_hour == 3 && boolIndexBeginOfHour[3] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[3] = true;
+//             }
+//             if(temp_gbl_hour == 4 && boolIndexBeginOfHour[4] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[4] = true;
+//             }
+//             if(temp_gbl_hour == 5 && boolIndexBeginOfHour[5] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[5] = true;
+//             }
+//             if(temp_gbl_hour == 6 && boolIndexBeginOfHour[6] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[6] = true;
+//             }
+//             if(temp_gbl_hour == 7 && boolIndexBeginOfHour[7] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[7] = true;
+//             }
+            
+//             if(temp_gbl_hour == 8 && boolIndexBeginOfHour[8] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[8] = true;
+//             }
+//             if(temp_gbl_hour == 9 && boolIndexBeginOfHour[9] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[9] = true;
+//             }
+//             if(temp_gbl_hour == 10 && boolIndexBeginOfHour[10] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[10] = true;
+//             }
+//             if(temp_gbl_hour == 11 && boolIndexBeginOfHour[11] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[11] = true;
+//             }
+//             if(temp_gbl_hour == 12 && boolIndexBeginOfHour[12] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[12] = true;
+//             }
+//             if(temp_gbl_hour == 13 && boolIndexBeginOfHour[13] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[13] = true;
+//             }
+//             if(temp_gbl_hour == 14 && boolIndexBeginOfHour[14] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[14] = true;
+//             }
+//             if(temp_gbl_hour == 15 && boolIndexBeginOfHour[15] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[15] =true;
+//             }
+            
+//             if(temp_gbl_hour == 16 && boolIndexBeginOfHour[16] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[16] = true;
+//             }
+//             if(temp_gbl_hour == 17 && boolIndexBeginOfHour[17] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[17] = true;
+//             }
+//             if(temp_gbl_hour == 18 && boolIndexBeginOfHour[18] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[18] = true;
+//             }
+//             if(temp_gbl_hour == 19 && boolIndexBeginOfHour[19] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[19] = true;
+//             }
+//             if(temp_gbl_hour == 20 && boolIndexBeginOfHour[20] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[20] = true;
+//             }
+//             if(temp_gbl_hour == 21 && boolIndexBeginOfHour[21] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[21] = true;
+//             }
+//             if(temp_gbl_hour == 22 && boolIndexBeginOfHour[22] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[22] = true;
+//             }
+//             if(temp_gbl_hour == 23 && boolIndexBeginOfHour[23] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[23] = true;
+//             }
+//         }
+//         if( temp_gbl_day == 19){
+//             if(indexBeginOfSearch19 == false){
+//                 listTime[indexListTime++].addDay(count_row);
+//                 indexBeginOfSearch19 = true;
+//             }
+//             if(temp_gbl_hour == 0 && boolIndexBeginOfHour[0] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[0] = true;
+//             }
+//             if(temp_gbl_hour == 1 && boolIndexBeginOfHour[1] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[1] = true;
+//             }
+//             if(temp_gbl_hour == 2 && boolIndexBeginOfHour[2] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[2] = true;
+//             }
+//             if(temp_gbl_hour == 3 && boolIndexBeginOfHour[3] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[3] = true;
+//             }
+//             if(temp_gbl_hour == 4 && boolIndexBeginOfHour[4] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[4] = true;
+//             }
+//             if(temp_gbl_hour == 5 && boolIndexBeginOfHour[5] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[5] = true;
+//             }
+//             if(temp_gbl_hour == 6 && boolIndexBeginOfHour[6] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[6] = true;
+//             }
+//             if(temp_gbl_hour == 7 && boolIndexBeginOfHour[7] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[7] = true;
+//             }
+            
+//             if(temp_gbl_hour == 8 && boolIndexBeginOfHour[8] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[8] = true;
+//             }
+//             if(temp_gbl_hour == 9 && boolIndexBeginOfHour[9] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[9] = true;
+//             }
+//             if(temp_gbl_hour == 10 && boolIndexBeginOfHour[10] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[10] = true;
+//             }
+//             if(temp_gbl_hour == 11 && boolIndexBeginOfHour[11] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[11] = true;
+//             }
+//             if(temp_gbl_hour == 12 && boolIndexBeginOfHour[12] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[12] = true;
+//             }
+//             if(temp_gbl_hour == 13 && boolIndexBeginOfHour[13] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[13] = true;
+//             }
+//             if(temp_gbl_hour == 14 && boolIndexBeginOfHour[14] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[14] = true;
+//             }
+//             if(temp_gbl_hour == 15 && boolIndexBeginOfHour[15] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[15] =true;
+//             }
+            
+//             if(temp_gbl_hour == 16 && boolIndexBeginOfHour[16] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[16] = true;
+//             }
+//             if(temp_gbl_hour == 17 && boolIndexBeginOfHour[17] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[17] = true;
+//             }
+//             if(temp_gbl_hour == 18 && boolIndexBeginOfHour[18] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[18] = true;
+//             }
+//             if(temp_gbl_hour == 19 && boolIndexBeginOfHour[19] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[19] = true;
+//             }
+//             if(temp_gbl_hour == 20 && boolIndexBeginOfHour[20] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[20] = true;
+//             }
+//             if(temp_gbl_hour == 21 && boolIndexBeginOfHour[21] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[21] = true;
+//             }
+//             if(temp_gbl_hour == 22 && boolIndexBeginOfHour[22] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[22] = true;
+//             }
+//             if(temp_gbl_hour == 23 && boolIndexBeginOfHour[23] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[23] = true;
+//             }
+//         }
+//         if( temp_gbl_day == 20){
+//             if(indexBeginOfSearch20 == false){
+//                 listTime[19].addDay(count_row);
+//                 indexBeginOfSearch20 = true;
+//             }
+//             if(temp_gbl_hour == 0 && boolIndexBeginOfHour[0] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[0] = true;
+//             }
+//             if(temp_gbl_hour == 1 && boolIndexBeginOfHour[1] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[1] = true;
+//             }
+//             if(temp_gbl_hour == 2 && boolIndexBeginOfHour[2] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[2] = true;
+//             }
+//             if(temp_gbl_hour == 3 && boolIndexBeginOfHour[3] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[3] = true;
+//             }
+//             if(temp_gbl_hour == 4 && boolIndexBeginOfHour[4] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[4] = true;
+//             }
+//             if(temp_gbl_hour == 5 && boolIndexBeginOfHour[5] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[5] = true;
+//             }
+//             if(temp_gbl_hour == 6 && boolIndexBeginOfHour[6] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[6] = true;
+//             }
+//             if(temp_gbl_hour == 7 && boolIndexBeginOfHour[7] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[7] = true;
+//             }
+            
+//             if(temp_gbl_hour == 8 && boolIndexBeginOfHour[8] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[8] = true;
+//             }
+//             if(temp_gbl_hour == 9 && boolIndexBeginOfHour[9] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[9] = true;
+//             }
+//             if(temp_gbl_hour == 10 && boolIndexBeginOfHour[10] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[10] = true;
+//             }
+//             if(temp_gbl_hour == 11 && boolIndexBeginOfHour[11] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[11] = true;
+//             }
+//             if(temp_gbl_hour == 12 && boolIndexBeginOfHour[12] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[12] = true;
+//             }
+//             if(temp_gbl_hour == 13 && boolIndexBeginOfHour[13] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[13] = true;
+//             }
+//             if(temp_gbl_hour == 14 && boolIndexBeginOfHour[14] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[14] = true;
+//             }
+//             if(temp_gbl_hour == 15 && boolIndexBeginOfHour[15] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[15] =true;
+//             }
+            
+//             if(temp_gbl_hour == 16 && boolIndexBeginOfHour[16] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[16] = true;
+//             }
+//             if(temp_gbl_hour == 17 && boolIndexBeginOfHour[17] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[17] = true;
+//             }
+//             if(temp_gbl_hour == 18 && boolIndexBeginOfHour[18] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[18] = true;
+//             }
+//             if(temp_gbl_hour == 19 && boolIndexBeginOfHour[19] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[19] = true;
+//             }
+//             if(temp_gbl_hour == 20 && boolIndexBeginOfHour[20] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[20] = true;
+//             }
+//             if(temp_gbl_hour == 21 && boolIndexBeginOfHour[21] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[21] = true;
+//             }
+//             if(temp_gbl_hour == 22 && boolIndexBeginOfHour[22] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[22] = true;
+//             }
+//             if(temp_gbl_hour == 23 && boolIndexBeginOfHour[23] == false ){
+//                 listTime[indexListTime-1].addHour(count_row);
+//                 boolIndexBeginOfHour[23] = true;
+//             }
+//         }
+// }
+// catch (Exception e) {
+    
+// }
