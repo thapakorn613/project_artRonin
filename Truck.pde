@@ -16,6 +16,7 @@ class Truck{
     ScreenPosition screenPos_origin;
     ScreenPosition screenPos_on_time;
     ScreenPosition screenPos_destinetion;
+    ScreenPosition screenPos_on_retunrn;
     ScreenPosition tempPos;
     // ScreenPosition[] screenPos_dest = new ScreenPosition[1];
 
@@ -49,6 +50,7 @@ class Truck{
     int gbl_length;
     int check_lat,check_long;
     public boolean plot_end;
+    boolean plot_finish;
 
     Truck(float _lati_o,float _long_o,float _lati_d,float _long_d,float _duration,String _time_orig ,int _indexOfTruck){
         loc_orig[0] = new Location(_lati_o,_long_o);
@@ -59,6 +61,7 @@ class Truck{
         old_lat = _lati_o;
         old_long = _long_o;
         plot_end = false;
+        plot_finish = false;
         lat_dest = _lati_d;
         long_dest = _long_d;
 
@@ -67,26 +70,30 @@ class Truck{
         time_minus = temp_time[1];
         time_second = temp_time[2];
 
-
         duration_lati = _lati_d - _lati_o;
         duration_long = _long_d - _long_o;
         duration_time = _duration;
-        c_orign = color(random(100, 255),random(100, 255), random(100, 255), 200);
+        c_orign = color(random(100, 255),random(100, 255), random(100, 255), 240);
         duration_dist = dist(lat_origin, long_origin, lat_dest, long_dest);
         speed_lati = duration_lati /duration_time;
         speed_long = duration_long /duration_time;
         println();
 
     }
+    public Location re_location(){
+        Location temp4 = new Location(lat_origin,long_origin);
+        return temp4;
+    }
 
-    
-    public void update(int _timer) {        
+
+    public void update(int _gbl_minus,int _timer) {        
         if(begin_start == true){
             if( frameCount % _timer == 0){
                 lat_origin = lat_origin + speed_lati;
                 long_origin = long_origin + speed_long;
-                if( lat_origin >= lat_dest){
+                if( lat_origin >= lat_dest && long_origin >= long_dest){
                     plot_end = true;
+                    fill(255,0,0);
                 }
             }
         }
@@ -97,7 +104,7 @@ class Truck{
             begin_start = true;
         }
         if(begin_start == true && plot_end == false){
-            if(_minus<duration_time ){
+            if(_minus < duration_time ){
                 Location temp1 = new Location(lat_origin,long_origin);
                 screenPos_on_time = map.getScreenPosition(temp1); 
 
@@ -115,16 +122,20 @@ class Truck{
                 ellipseMode(CENTER);
                 fill(c_orign);
                 ellipse(screenPos_origin.x, screenPos_origin.y, 10, 10);
-
                 strokeWeight(2);
                 stroke(c_orign);
                 fill(0,0,0);
                 ellipse(screenPos_destinetion.x, screenPos_destinetion.y, 10, 10);
 
             }
-            // Location temp2 = new Location(old_lat,old_long);
-            // screenPos_destinetion = map.getScreenPosition(temp2); 
-            // ellipse(screenPos_destinetion.x, screenPos_destinetion.y, 10, 10);
+            
+        }
+        if( plot_finish == false && plot_end == true){
+            fill(255,0,0);
+            // Location temp4 = new Location(lat_origin,long_origin);
+            // screenPos_destinetion = map.getScreenPosition(temp4); 
+            // rect(screenPos_destinetion.x, screenPos_destinetion.y, 20, 20);
+            plot_finish = true;
         }
     }
 

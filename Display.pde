@@ -27,10 +27,18 @@ class Display{
         displaySearch();
         fill(c_menu_start);
         textFont(impact_15);
+
         rect(540, 500, 100, 50);
         textFont(tw);
         fill(0);
         text("Start!!", 555, 540);
+        
+        fill(255,255,0,100);
+        rect(480, 500, 50, 50);
+        textFont(impact_15);
+        fill(0);
+        text("Pan", 485, 540);
+
         fill(255,255,0);
         text("Map : Thapakorn", 535, 490);
         fill(c_menu_reset);

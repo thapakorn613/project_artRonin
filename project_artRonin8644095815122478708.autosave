@@ -66,7 +66,6 @@ int indexListTime = 0;
 boolean []boolIndexBeginOfHour = new boolean[24];
 String selectDay = "14";
 String savedDay = "14";
-int lenEnd ;
 // Truck [] trucks = new Truck[160986];
 
 void setup(){
@@ -79,7 +78,6 @@ void setup(){
     // noStroke();
     gbl_hour = 0;
     gbl_minus = 0;
-    lenEnd = 900;
     
     font = createFont("Impact", 30, true);
     //? data init
@@ -162,14 +160,14 @@ void setup(){
     //map = new UnfoldingMap(this, new StamenMapProvider.TonerBackground());
     map.zoomToLevel(6);
     map.panTo(beginLocation);
-    map.setZoomRange(1, 15); // prevent zooming too far out
+    // map.setZoomRange(1, 15); // prevent zooming too far out
     //map.setZoomRange(6, 6); // prevent zooming too far out
     map.setPanningRestriction(beginLocation, 50);
     MapUtils.createDefaultEventDispatcher(this, map);
     frameRate(60); // frameRate(5) -> frameCount % 10 เปลี่ยนทีละ 2 วินาที
-    timer = 10;
+    timer = 15;
     indexBegin = 0;
-    indexEnd_end =lenEnd;
+    indexEnd_end =100;
     gbl_day = 14;
     getIndex();
     
@@ -184,7 +182,7 @@ void draw(){
     //     map = new UnfoldingMap(this);
     // }
     map.draw();
-    // mainDisplay.debugPoint();
+    mainDisplay.debugPoint();
     mainDisplay.timeDisplay(gbl_day,gbl_hour,gbl_minus);
     if(boolStart){
         // mainDisplay.timeDisplay(gbl_day,gbl_hour,gbl_minus);
@@ -212,17 +210,12 @@ void draw(){
 }
 
 void resetToZero(){
-    map = new UnfoldingMap(this);
-    map.zoomToLevel(6);
-    map.panTo(beginLocation);
-    map.setPanningRestriction(beginLocation, 50);
-    MapUtils.createDefaultEventDispatcher(this, map);
     gbl_day = 0;
     gbl_hour = 0;
     gbl_minus = 0;
     indexBegin = 0;
-    indexEnd = lenEnd;
-    indexEnd_end = lenEnd;
+    indexEnd = 900;
+    indexEnd_end = 900;
     savedDay = "14";
     frameCount = 0;
 }
@@ -263,38 +256,37 @@ void mousePressed(){
         gbl_hour = trucks[temp_ran1].time_hour;
         gbl_minus = trucks[temp_ran1].time_minus;
         indexBegin = trucks[temp_ran1].indexOfTruck;
-        indexEnd_end = indexBegin + lenEnd;
+        indexEnd_end = indexBegin + 900;
     }
     if (mouseX >= 20 && mouseX <= 190 && mouseY >= 465 && mouseY <= 480) {
          gbl_hour = trucks[temp_ran2].time_hour;
          gbl_minus = trucks[temp_ran2].time_minus ;
          indexBegin = trucks[temp_ran2].indexOfTruck;
-         indexEnd_end = indexBegin + lenEnd;
+         indexEnd_end = indexBegin + 900;
         
     }
     if (mouseX >= 20 && mouseX <= 190 && mouseY >= 490 && mouseY <= 510) {
          gbl_hour = trucks[temp_ran3].time_hour;
          gbl_minus = trucks[temp_ran3].time_minus ;
          indexBegin = trucks[temp_ran3].indexOfTruck;
-         indexEnd_end = indexBegin + lenEnd;
+         indexEnd_end = indexBegin + 900;
     }
     if (mouseX >= 20 && mouseX <= 190 && mouseY >= 515 && mouseY <= 535) {
          gbl_hour = trucks[temp_ran4].time_hour;
          gbl_minus = trucks[temp_ran4].time_minus ;
          indexBegin = trucks[temp_ran4].indexOfTruck;
-         indexEnd_end = indexBegin + lenEnd;
+         indexEnd_end = indexBegin + 900;
     }
     if (mouseX >= 20 && mouseX <= 190 && mouseY >= 540 && mouseY <= 560) {
          gbl_hour = trucks[temp_ran5].time_hour;
          gbl_minus = trucks[temp_ran5].time_minus ;
          indexBegin = trucks[temp_ran5].indexOfTruck;
-         indexEnd_end = indexBegin + lenEnd;
+         indexEnd_end = indexBegin + 900;
     }
     if (mouseX >= 600 && mouseX <= 700 && mouseY >= 500 && mouseY <= 550) {
         println("reset!!");
         resetToZero();
         boolStart = false;
-        isMapToner = false;   
     }
     if (mouseX >= 540 && mouseX <= 640 && mouseY >= 500 && mouseY <= 550) {
         println("Start!!");
@@ -308,6 +300,9 @@ void mousePressed(){
         }
         else if(isMapToner == false){
             isMapToner = true;
+        }
+        else{
+            isMapToner = false;
         }
         
     }
@@ -345,9 +340,9 @@ void getIndex(){
     }
     else {
         indexBegin = 0;
-        indexEnd = lenEnd;
+        indexEnd = 900;
     }
-    indexEnd_end = indexBegin + lenEnd;
+    indexEnd_end = indexBegin + 900;
 }
 
 void createIndexRan(int _indexBegin, int _indexEnd){
