@@ -11,6 +11,8 @@ class Display{
     public String savedDay = "14";
     public String selectDay= "";
 
+    PImage img;
+
     Display(float _width, float _height){
         w = _width;
         h = _height;
@@ -21,6 +23,7 @@ class Display{
         wdb = createFont("WDB Bangna",30,true);
         tw = createFont("Tw Cen MT Bold",30,true);
         selectDay = "";
+        img = loadImage("/data/img/compass.png");
     }
     
     void showDisplay(){
@@ -39,7 +42,7 @@ class Display{
         fill(0);
         text("Pan", 485, 540);
 
-        fill(255,255,0);
+        fill(0);
         text("Map : Thapakorn", 535, 490);
         fill(c_menu_reset);
         rect(650, 500, 100, 50);
@@ -70,9 +73,7 @@ class Display{
         rect(20, 490, 170 , 20);
         rect(20, 515, 170 , 20);
         rect(20, 540, 170 , 20);
-        // fill(0);
-        // text("NORTH", w-150, h-100);
-
+        image(img, 630, 10, 150, 150);
     }
     public int getDay(){
         return int(savedDay);
@@ -101,13 +102,18 @@ class Display{
         }else {
             text(""+str(minus), 150, 80);
         }
-        text(":"+(frameCount%60), 190, 80);
+        text(":", 190, 80);
+        if(str((frameCount%60)).length()<2){
+            text("0", 200, 80);
+            text(""+(frameCount%60), 220, 80);
+        }else {
+            text(""+(frameCount%60), 200, 80);
+        }
         text("]", 235, 80);
         textFont(impact_15);
         text("hour", 107, 95);
         text("minus", 150, 95);
         text("sec", 200, 95);
-
 
     }
 
