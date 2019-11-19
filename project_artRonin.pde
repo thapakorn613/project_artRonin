@@ -10,29 +10,29 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 Location beginLocation = new Location(51.00755f, -113.9989f);
-
 DateTimeFormatter date_format = DateTimeFormatter.ofPattern("dd-MM-yy");
 
 UnfoldingMap map;
-
+PImage img;
 Display mainDisplay ;
-
 Table truck_rawdata;
 PFont font,impact_10;
 
-int sizeOfRow ;
-int c = 0; // Variable for line index
-int currentLocation = 0;
+int sizeOfRow;
 int count_minus = 0;
 
 int gbl_day;
 int gbl_mon;
-
 int gbl_hour;
 int gbl_minus;
+
+int indexEnd;
+int indexEnd_end;
+int strDay ;
+int timer ;
+int temp_gbl_day;
+
 int beginIndexDay14,beginIndexDay15,beginIndexDay16,beginIndexDay17,beginIndexDay18,beginIndexDay19,beginIndexDay20;
-int beginIndexDayBegin = 0;
-int beginIndexDayEnd = 160986;
 int temp_ran1,temp_ran2,temp_ran3,temp_ran4,temp_ran5;
 
 boolean indexBeginOfSearch14 = false;
@@ -43,50 +43,33 @@ boolean indexBeginOfSearch18 = false;
 boolean indexBeginOfSearch19 = false;
 boolean indexBeginOfSearch20 = false;
 
-// boolean debugMode = true;
+int check_row = 1;
+int indexBegin = 0;
+int indexListTime = 0;
+int beginIndexDayBegin = 0;
+int beginIndexDayEnd = 160986;
 boolean debugMode = false;
-
-int indexBegin =0;
-int indexEnd;
-int indexEnd_end;
-int strDay ;
-int timer ;
-int temp_gbl_day;
-
 boolean boolStart = false;
 boolean boolStop = false;
 boolean isMapBasic = true;
 boolean isMapToner = false;
 
-int check_row = 1;
-
 Truck [] trucks;
-IndexDate [] listTime;
-int indexListTime = 0;
-boolean []boolIndexBeginOfHour = new boolean[24];
 String selectDay = "14";
 String savedDay = "14";
 int lenEnd ;
-// Truck [] trucks = new Truck[160986];
 
 void setup(){
     size(800, 600, P2D);
     mainDisplay = new Display(width,height);
-    //size(800, 600, OPENGL);
     smooth();
     impact_10 = createFont("Impact", 10, true);
-    listTime = new IndexDate[8];
-    // noStroke();
     gbl_hour = 0;
     gbl_minus = 0;
     lenEnd = 900;
-    
+    count_minus = 0;
     font = createFont("Impact", 30, true);
     //? data init
-    for (int i = 0; i < 24; i++) {
-        boolIndexBeginOfHour[i] = false;
-    }
-  
     if(debugMode == true){        
         truck_rawdata = loadTable("data/truck1week_for_test.csv", "header");
         sizeOfRow = 5;
@@ -117,7 +100,6 @@ void setup(){
         int []temp_date = int(split(tempCheck,'-'));
         temp_gbl_day = temp_date[0];
 
-
         if( temp_gbl_day == 14 && indexBeginOfSearch14 == false){
             beginIndexDay14 = count_row;
             indexBeginOfSearch14 = true;
@@ -146,53 +128,32 @@ void setup(){
             beginIndexDay20 = count_row;
             indexBeginOfSearch20 = true;
         }
-        // int []temp_hour = int(split(tempCheck,':'));
-        
-        // temp_gbl_hour = temp_hour[0];
-        
-        //? find duration between origin & destination
         float trans_duration_minutes = Duration.between(ldt_orig, ldt_dest).toMinutes();
-        // float trans_duration_minutes = Duration.between(ldt_orig, ldt_dest).toMinutes();
-        // float trans_duration_minutes = Duration.between(ldt_orig, ldt_dest).toMinutes();
         String temp_time_orig = row.getString("time_orig");
         trucks[count_row++] = new Truck(lat_orig,long_orig,lat_dest,long_dest,trans_duration_minutes,temp_time_orig,count_row);
     }
     // init Map
     map = new UnfoldingMap(this);
-    //map = new UnfoldingMap(this, new StamenMapProvider.TonerBackground());
-    map.zoomToLevel(6);
-    map.panTo(beginLocation);
-    map.setZoomRange(1, 15); // prevent zooming too far out
-    //map.setZoomRange(6, 6); // prevent zooming too far out
-    map.setPanningRestriction(beginLocation, 50);
+    // map.panTo(beginLocation);
+    map.zoomAndPanTo(beginLocation, 10);
     MapUtils.createDefaultEventDispatcher(this, map);
-    frameRate(60); // frameRate(5) -> frameCount % 10 เปลี่ยนทีละ 2 วินาที
+    frameRate(60); 
     timer = 10;
     indexBegin = 0;
     indexEnd_end =lenEnd;
     gbl_day = 14;
     getIndex();
-    
 }
 
 void draw(){
     gbl_day = mainDisplay.getDay();
-    if(isMapToner == true){
-        panMap();
-    }
-    // if(isMapBasic== true){
-    //     map = new UnfoldingMap(this);
-    // }
     map.draw();
-    // mainDisplay.debugPoint();
     mainDisplay.timeDisplay(gbl_day,gbl_hour,gbl_minus);
     if(boolStart){
-        // mainDisplay.timeDisplay(gbl_day,gbl_hour,gbl_minus);
         for(int i = indexBegin ;i< indexEnd_end ;i++){
             trucks[i].update(gbl_minus,timer);
             trucks[i].display(gbl_day,gbl_hour,gbl_minus);
         }
-        println("indexBegin : "+indexBegin+" indexEnd : "+indexEnd_end);
         if (frameCount % timer == 0) {
             gbl_minus ++;
             if((gbl_minus % 60 == 0 )){
@@ -205,32 +166,20 @@ void draw(){
         
     }else{
         frameCount = 0;
-        // resetToZero();
     }
     mainDisplay.showDisplay();
+    if(isMapToner == true){
+        panMap();
+    }
     showSelect(temp_ran1,temp_ran2,temp_ran3,temp_ran4,temp_ran5);
 }
 
-void resetToZero(){
-    map = new UnfoldingMap(this);
-    map.zoomToLevel(6);
-    map.panTo(beginLocation);
-    map.setPanningRestriction(beginLocation, 50);
-    MapUtils.createDefaultEventDispatcher(this, map);
-    gbl_day = 0;
-    gbl_hour = 0;
-    gbl_minus = 0;
-    indexBegin = 0;
-    indexEnd = lenEnd;
-    indexEnd_end = lenEnd;
-    savedDay = "14";
-    frameCount = 0;
-}
 void panMap(){
-    map.zoomToLevel(14);
-    map.panTo(trucks[0].re_location());
+    map.zoomToLevel(13);
+    map.panTo(trucks[indexBegin].re_location());
 
 }
+
 void keyPressed(){
   if(key== '\n'){
     mainDisplay.savedDay = mainDisplay.selectDay;
@@ -240,7 +189,6 @@ void keyPressed(){
     getIndex();
     createIndexRan(indexBegin,indexEnd);
     showSelect(temp_ran1,temp_ran2,temp_ran3,temp_ran4,temp_ran5);
-
   }else{
     mainDisplay.selectDay = mainDisplay.selectDay +key;
   }
@@ -254,11 +202,9 @@ void showSelect(int ind_1,int ind_2,int ind_3,int ind_4,int ind_5){
     text(str(gbl_day)+"/03/16 , "+trucks[ind_3].time_hour+" : "+trucks[ind_3].time_minus+" : "+trucks[ind_3].time_second,30,505);
     text(str(gbl_day)+"/03/16 , "+trucks[ind_4].time_hour+" : "+trucks[ind_4].time_minus+" : "+trucks[ind_4].time_second,30,530);
     text(str(gbl_day)+"/03/16 , "+trucks[ind_5].time_hour+" : "+trucks[ind_5].time_minus+" : "+trucks[ind_5].time_second,30,555);
-
 }
 
 void mousePressed(){
-
     if (mouseX >= 20 && mouseX <= 190 && mouseY >= 440 && mouseY <= 460) {
         gbl_hour = trucks[temp_ran1].time_hour;
         gbl_minus = trucks[temp_ran1].time_minus;
@@ -292,6 +238,9 @@ void mousePressed(){
     }
     if (mouseX >= 600 && mouseX <= 700 && mouseY >= 500 && mouseY <= 550) {
         println("reset!!");
+        for (int i = indexBegin ; i < indexEnd_end; i++) {
+            trucks[i].reset();    
+        }
         resetToZero();
         boolStart = false;
         isMapToner = false;   
@@ -302,7 +251,6 @@ void mousePressed(){
     }
     if (mouseX >= 480 && mouseX <= 530 && mouseY >= 500 && mouseY <= 550) {
         println("Map");
-        // panMap();
         if(isMapToner == true){
             isMapToner = false;    
         }
@@ -314,7 +262,6 @@ void mousePressed(){
 }
 
 void getIndex(){
-    float index_duration ;
     if(gbl_day == 14){
         indexBegin = beginIndexDay14;
         indexEnd = beginIndexDay15;
@@ -351,12 +298,6 @@ void getIndex(){
 }
 
 void createIndexRan(int _indexBegin, int _indexEnd){
-    float index_duration ;
-    // if(debugMode == true){
-    //     indexBegin =0;
-    //     indexEnd_end =5;
-    // }else {
-        // index_duration = (float)indexEnd - indexBegin ;
     temp_ran1 = constrain(temp_ran1, _indexBegin, _indexEnd);
     temp_ran2 = constrain(temp_ran2, _indexBegin, _indexEnd);
     temp_ran3 = constrain(temp_ran3, _indexBegin, _indexEnd);
@@ -367,8 +308,19 @@ void createIndexRan(int _indexBegin, int _indexEnd){
     temp_ran3 = (int)random(_indexBegin, _indexEnd);
     temp_ran4 = (int)random(_indexBegin, _indexEnd);
     temp_ran5 = (int)random(_indexBegin, _indexEnd);
-    // indexBegin = _indexBegin;
-    // indexEnd_end = _indexEnd;
-    // }
     
+}
+
+void resetToZero(){
+    map = new UnfoldingMap(this);
+    map.zoomAndPanTo(beginLocation, 10);
+    MapUtils.createDefaultEventDispatcher(this, map);
+    gbl_day = 0;
+    gbl_hour = 0;
+    gbl_minus = 0;
+    indexBegin = 0;
+    indexEnd = lenEnd;
+    indexEnd_end = lenEnd;
+    savedDay = "14";
+    frameCount = 0;
 }
